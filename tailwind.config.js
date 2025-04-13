@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,10 +9,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        gray: {
+          25: '#fcfcfc',
+          ...colors.gray,
+        },
+      },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
   plugins: [],
-}
+};

@@ -4,6 +4,7 @@ import Hero from "@/app/components/hero";
 import Projects from "@/app/components/projects";
 import About from "@/app/components/aboutus";
 import Resources from "@/app/components/resources";
+import Newsletter from "@/app/components/newsletter";
 import ContactUs from "@/app/components/contact";
 import Footer from "@/app//components/footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Projects />
       <About />
       <Resources />
+      <Newsletter />
       <ContactUs />
       <Footer />
     </div>
