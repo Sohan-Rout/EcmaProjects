@@ -2,34 +2,14 @@ const FeaturedProjects = () => {
   const projects = [
     {
       id: 1,
-      title: "AI Chatbot",
-      description: "ML-powered natural language processing",
-      image: "/ai-chatbot.jpg",
-      repoLink: "https://github.com/example/chatbot",
-      authorName: "john_doe",
-      authorLink: "https://github.com/johndoe",
-      tags: ["AI", "Python"]
-    },
-    {
-      id: 2,
-      title: "E-commerce Platform", 
-      description: "Full-stack with payment integration",
-      image: "/ecommerce-platform.jpg",
-      repoLink: "https://github.com/example/ecommerce",
-      authorName: "jane_smith",
-      authorLink: "https://github.com/janesmith",
-      tags: ["React", "Node.js"]
-    },
-    {
-      id: 3,
-      title: "Portfolio Builder",
-      description: "Drag-and-drop interface",
-      image: "/portfolio-builder.jpg",
-      repoLink: "https://github.com/example/portfolio",
-      authorName: "alex_johnson",
-      authorLink: "https://github.com/alexjohnson",
-      tags: ["Next.js", "Tailwind"]
-    },
+      title: "DSA Visualizer",
+      description: "Interactive visualization of data structures and algorithms",
+      image: "/prototypedsavisualizer.png",
+      repoLink: "https://github.com/Sohan-Rout/DsaVisualizer",
+      authorName: "Sohan_Rout",
+      authorLink: "https://www.linkedin.com/in/sohan-rout",
+      tags: ["JavaScript", "next.js", "Algorithms", "express.js"]
+    }
   ];
 
   return (
@@ -81,7 +61,7 @@ const FeaturedProjects = () => {
 
                 {/* Title & Description */}
                 <h3 className="text-xl font-bold mb-2 font-poppins group-hover:text-amber-500 transition-colors">
-                  {project.title}
+                  <a href="https://www.dsavisualizer.in">{project.title}</a>
                 </h3>
                 <p className="text-gray-600 mb-4 text-sm">
                   {project.description}
