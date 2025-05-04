@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section className="bg-black text-white relative overflow-hidden">
+    <section className="bg-black text-white relative overflow-hidden min-h-screen">
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-gray-900 opacity-90"></div>
       
