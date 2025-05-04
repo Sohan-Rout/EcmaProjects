@@ -37,7 +37,7 @@ const Navbar = () => {
             {/* Logo - Left aligned */}
             <div className="flex-shrink-0 flex items-center space-x-3">
               <button onClick={() => scrollToSection('home')} className="group flex items-center space-x-3">
-                <img src="/favicon.ico" alt="EcmaProjects logo" className="w-12 h-12" style={{ filter: 'brightness(2)' }} />
+                {/* Removed favicon image */}
                 <h1 className="text-xl font-mono font-bold tracking-tight text-white">
                   <span className="text-amber-500 group-hover:text-amber-400 transition-colors">E</span>
                   <span className="group-hover:text-gray-300 transition-colors">cma</span>
