@@ -1,9 +1,26 @@
 import { useState, useEffect } from 'react';
 import SubmitProjectPopup from './SubmitProjectPopup';
 
+const LoadingOverlay = () => (
+  <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+    <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-16 w-16"></div>
+    <style jsx>{`
+      .loader {
+        border-top-color: #f59e0b;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+      }
+    `}</style>
+  </div>
+);
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,10 +31,22 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false); // Close mobile menu after clicking
+    if (sectionId === 'about') {
+      setLoading(true);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+        setLoading(false);
+        setIsOpen(false);
+      }, 1500);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      setIsOpen(false);
     }
   };
 
@@ -31,6 +60,7 @@ const Navbar = () => {
 
   return (
     <>
+      {loading && <LoadingOverlay />}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-sm py-2 border-b border-gray-800' : 'bg-black py-3'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
