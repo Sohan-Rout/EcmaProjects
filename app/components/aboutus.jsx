@@ -13,28 +13,16 @@ const AboutUs = () => {
           <div className="w-20 h-1 bg-amber-500 mx-auto mt-6"></div>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Image */}
-          <div className="relative group">
-            <div className="absolute -inset-2 bg-gradient-to-r from-amber-400 to-amber-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
-            <div className="relative h-80 lg:h-full bg-gray-100 rounded-lg overflow-hidden">
-              <img
-                src="/team-working.jpg" // Replace with your image
-                alt="EcmaProjects team"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-          </div>
-
-          {/* Right Column - Text */}
-          <div>
+        {/* Content Container - Centered */}
+        <div className="flex flex-col items-center gap-12">
+          {/* Text Content */}
+          <div className="max-w-xl text-center">
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               At <span className="font-semibold text-gray-900">EcmaProjects</span>, we're revolutionizing how developers share their work with the world. Our platform bridges the gap between creativity and opportunity.
             </p>
             
             <div className="space-y-4 mb-8">
-              <div className="flex items-start">
+              <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +35,7 @@ const AboutUs = () => {
                 </p>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +48,7 @@ const AboutUs = () => {
                 </p>
               </div>
               
-              <div className="flex items-start">
+              <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
                     <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +62,7 @@ const AboutUs = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition duration-300 shadow hover:shadow-md">
                 Learn More
               </button>
