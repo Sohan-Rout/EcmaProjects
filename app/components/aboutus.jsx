@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const AboutUs = () => {
   return (
     <section className="bg-white text-gray-900 py-24 px-4">
@@ -66,9 +68,11 @@ const AboutUs = () => {
               <button className="px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition duration-300 shadow hover:shadow-md">
                 Learn More
               </button>
-              <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition duration-300">
-                Meet the Team
-              </button>
+              <Link href="/about/meet-the-team" passHref>
+                <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition duration-300">
+                  Meet the Team
+                </button>
+              </Link>
             </div>
           </div>
         </div>
