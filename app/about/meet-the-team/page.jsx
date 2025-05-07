@@ -17,7 +17,7 @@ const MeetTheTeam = () => {
       name: "Vaibhav Jamloki",
       linkedin: "https://www.linkedin.com/in/vaibhav-jamloki/",
       description: "Vaibhav Jamloki - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
-      role: "Cofounder",
+      role: "Founder",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const MeetTheTeam = () => {
       name: "Sohan Rout",
       linkedin: "https://www.linkedin.com/in/sohan-rout/",
       description: "Sohan Rout - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
-      role: "Cofounder",
+      role: "Founder",
     },
   ];
 
@@ -192,6 +192,67 @@ const MeetTheTeam = () => {
           gap: 3rem; /* increased gap between cards */
           flex-wrap: wrap;
           width: 100%;
+        }
+      `}</style>
+      <style jsx>{`
+      @media (max-width: 768px) {
+          .meet-the-team-container > h1 {
+            flex-wrap: nowrap;
+            font-size: 2rem;
+          }
+          .meet-the-team-container > h1 > span {
+            margin-right: 0.5rem;
+          }
+          /* Added header styles for mobile */
+          .meet-the-team-container > h1 {
+            flex-direction: column;
+            align-items: center;
+            font-size: 2.5rem;
+            line-height: 1.2;
+          }
+          .meet-the-team-container > h1 > span:first-child {
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+          }
+          .meet-the-team-container > h1 > span:last-child {
+            font-size: 3rem;
+            font-weight: 700;
+          }
+          .card {
+            padding: 16px;
+            width: 90vw;
+            max-width: 320px;
+            height: auto;
+            margin-bottom: 1.5rem;
+          }
+          .card img {
+            width: 140px;
+            height: 140px;
+            margin-bottom: 1rem;
+          }
+          .founder-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+          }
+          .founder-role {
+            font-size: 0.75rem;
+            width: 50px;
+            margin-bottom: 0.75rem;
+          }
+          .founder-description {
+            font-size: 0.75rem;
+            max-width: 260px;
+            margin-bottom: 1rem;
+          }
+          .connect-button {
+            font-size: 0.875rem;
+            padding: 0.4rem 1rem;
+            white-space: nowrap;
+          }
         }
       `}</style>
       <div className="w-full min-h-screen bg-white overflow-hidden px-8 py-16">
