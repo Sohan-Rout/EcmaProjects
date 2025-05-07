@@ -10,7 +10,7 @@ const MeetTheTeam = () => {
       <div className="container mx-auto px-4 py-12">
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h1>
+          <h1 className="text-4xl mt-16 font-bold text-gray-900 mb-4">Meet Our <span className="text-amber-500">Team</span></h1>
           <p className="text-lg text-gray-600">
             The passionate people behind our success
           </p>
