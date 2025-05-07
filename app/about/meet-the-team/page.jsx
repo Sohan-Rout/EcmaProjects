@@ -11,22 +11,34 @@ const MeetTheTeam = () => {
 
   const founders = [
     {
-      id: 1,
-      imgSrc: "/founder1.jpg",
-      alt: "Founder 1",
-      name: "Vaibhav Jamloki",
-      linkedin: "https://www.linkedin.com/in/vaibhav-jamloki/",
-      description: "Vaibhav Jamloki - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
-      role: "Founder",
-    },
-    {
       id: 2,
       imgSrc: "/founder2.jpg",
       alt: "Founder 2",
       name: "Sohan Rout",
       linkedin: "https://www.linkedin.com/in/sohan-rout/",
       description: "Sohan Rout - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
-      role: "Founder",
+      role: "Founder"
+    },
+    {
+      id: 1,
+      imgSrc: "/founder1.jpg",
+      alt: "Founder 1",
+      name: "Vaibhav Jamloki",
+      linkedin: "https://www.linkedin.com/in/vaibhav-jamloki/",
+      description: "Vaibhav Jamloki - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
+      role: "Co-founder",
+    },
+  ];
+
+  const teammates = [
+    {
+      id: 1,
+      imgSrc: "/teammate1.jpg",
+      alt: "Teammate 1",
+      name: "Vinay Singh Shekhawat",
+      linkedin: "https://www.linkedin.com/in/vinay-singh-shekhawat-14a609350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      description: "Vinay Singh Shekhawat - A passionate developer currently pursuing my BTech - Cybersecurity, IoT and Blockchain technology",
+      role: "Teammate"
     },
   ];
 
@@ -113,6 +125,34 @@ const MeetTheTeam = () => {
           text-align: center;
           margin-left: auto;
           margin-right: auto;
+        }
+        .cofounder-role {
+          color: #f59e0b; /* amber */
+          font-weight: 600;
+          border-color: #f59e0b; /* amber */
+          white-space: nowrap;
+          width: auto;
+          margin-left: 0;
+          margin-right: 0;
+          padding-left: 0;
+          padding-right: 0;
+        }
+        .connect-button {
+          background-color: #3b82f6; /* blue */
+          color: white;
+          font-weight: 700;
+          font-size: 1rem;
+          padding: 0.5rem 1.5rem;
+          border-radius: 0.375rem;
+          cursor: pointer;
+          border: none;
+          transition: background-color 0.3s ease;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        .connect-button:hover {
+          background-color: #2563eb; /* darker blue */
         }
         .founder-description {
           font-size: 0.875rem;
@@ -282,7 +322,7 @@ const MeetTheTeam = () => {
                   className=""
                 />
                 <p className="founder-name">{founder.name}</p>
-                <p className="founder-role">{founder.role}</p>
+                <p className={`founder-role ${founder.role.toLowerCase() === 'co-founder' ? 'cofounder-role' : ''}`}>{founder.role}</p>
                 <p className="founder-description">"{founder.description}"</p>
                 <a
                   href={founder.linkedin}
@@ -315,6 +355,47 @@ const MeetTheTeam = () => {
           <h3 className="section-title teammates-title">
             <span className="black-text">Team</span><span className="amber-text">mates</span>
           </h3>
+          <div className="founders-cards">
+            {teammates.map((teammate) => (
+              <div
+                key={teammate.id}
+                className="card"
+              >
+                <img
+                  src={teammate.imgSrc}
+                  alt={teammate.alt}
+                  className=""
+                />
+                <p className="founder-name">{teammate.name}</p>
+                <p className="founder-role">{teammate.role}</p>
+                <p className="founder-description">"{teammate.description}"</p>
+                <a
+                  href="https://www.linkedin.com/in/vinay-singh-shekhawat-14a609350?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="connect-button"
+                >
+                  Connect &rarr;
+                </a>
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                >
+                  <rect
+                    x="1"
+                    y="1"
+                    width="98"
+                    height="98"
+                    fill="none"
+                    stroke="#f59e0b"
+                    strokeWidth="2"
+                    className="snake-border"
+                  />
+                </svg>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
