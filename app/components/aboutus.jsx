@@ -22,7 +22,7 @@ const AboutUs = () => {
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
               At <span className="font-semibold text-gray-900">EcmaProjects</span>, we're revolutionizing how developers share their work with the world. Our platform bridges the gap between creativity and opportunity.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
@@ -36,7 +36,7 @@ const AboutUs = () => {
                   Curated showcase of exceptional developer projects
                 </p>
               </div>
-              
+
               <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
@@ -49,7 +49,7 @@ const AboutUs = () => {
                   Global community of passionate developers
                 </p>
               </div>
-              
+
               <div className="flex items-start justify-center">
                 <div className="flex-shrink-0 mt-1">
                   <div className="w-5 h-5 bg-amber-500 rounded-full flex items-center justify-center">
@@ -65,9 +65,11 @@ const AboutUs = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition duration-300 shadow hover:shadow-md">
-                Learn More
-              </button>
+              <Link href="/about/learn-more" passHref>
+                <button className="px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition duration-300 shadow hover:shadow-md">
+                  Learn More
+                </button>
+              </Link>
               <Link href="/about/meet-the-team" passHref>
                 <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition duration-300">
                   Meet the Team

@@ -81,7 +81,7 @@ const ContactUs = () => {
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               />
             </div>
-            
+
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <FiMail className="text-gray-400" />
@@ -96,7 +96,7 @@ const ContactUs = () => {
                 className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
               />
             </div>
-            
+
             <div className="relative">
               <div className="absolute top-3 left-3">
                 <FiMessageSquare className="text-gray-400" />
@@ -115,11 +115,10 @@ const ContactUs = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full px-6 py-3 rounded-lg font-medium flex items-center justify-center space-x-2 transition-all ${
-                isSubmitting 
-                  ? 'bg-amber-600 cursor-not-allowed' 
+              className={`w-full px-6 py-3 rounded-lg font-medium flex items-center justify-center space-x-2 transition-all ${isSubmitting
+                  ? 'bg-amber-600 cursor-not-allowed'
                   : 'bg-amber-500 hover:bg-amber-600 shadow hover:shadow-md'
-              }`}
+                }`}
             >
               {isSubmitting ? (
                 <>
