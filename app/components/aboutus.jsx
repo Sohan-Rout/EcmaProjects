@@ -80,22 +80,19 @@ const AboutUs = () => {
         </div>
 
         {/* Stats */}
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "250+", label: "Projects" },
-            { value: "120+", label: "Developers" },
-            { value: "15K+", label: "Contributions" },
-            { value: "100%", label: "Passion" }
-          ].map((stat, index) => (
-            <div key={index} className="p-6">
-              <div className="text-4xl font-bold text-gray-900 mb-2 font-poppins">
-                {stat.value}
-              </div>
-              <div className="text-gray-500 font-mono text-sm uppercase tracking-wider">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+        <div className="mt-24 flex flex-wrap justify-center gap-8 text-center text-gray-400">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900 font-mono">10+</div>
+            <div className="text-sm uppercase tracking-wider">Projects</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900 font-mono">5+</div>
+            <div className="text-sm uppercase tracking-wider">Developers</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-gray-900 font-mono">1K+</div>
+            <div className="text-sm uppercase tracking-wider">Contributions</div>
+          </div>
         </div>
       </div>
     </section>

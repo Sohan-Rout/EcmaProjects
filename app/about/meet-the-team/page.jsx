@@ -1,5 +1,5 @@
 "use client";
-import Navbar from "@/app/components/navbar";
+import Navbar from "../../components/navbar";
 import Image from "next/image";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -71,31 +71,7 @@ const MeetTheTeam = () => {
               </a>
             </div>
 
-            {/* Team Member 1 */}
-            <div className="flex-shrink-0 bg-white p-6 rounded-lg shadow-md text-center w-64">
-              <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
-                <Image
-                  src="/teammate1.jpg"
-                  alt="Vinay Singh Shekhawat"
-                  width={128}
-                  height={128}
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold">Vinay Singh Shekhawat</h3>
-              <p className="text-blue-600 font-medium mb-2">Social Media Expert</p>
-              <p className="text-gray-600 mb-4 text-sm">
-                Crafting our online presence and building authentic connections.
-              </p>
-              <a
-                href="https://www.linkedin.com/in/vinay-singh-shekhawat-14a609350"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700"
-              >
-                <FaLinkedin size={24} />
-              </a>
-            </div>
+            {/* Removed Team Member 1 (Vinay Singh Shekhawat) */}
           </div>
         </section>
 

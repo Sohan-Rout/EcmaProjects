@@ -6,8 +6,8 @@ const FeaturedProjects = () => {
       description: "Interactive visualization of data structures and algorithms",
       image: "/prototypedsavisualizer.png",
       repoLink: "https://github.com/Sohan-Rout/DsaVisualizer",
-      authorName: "Sohan_Rout",
-      authorLink: "https://www.linkedin.com/in/sohan-rout",
+      authorName: "",
+      authorLink: "",
       tags: ["JavaScript", "next.js", "Algorithms", "express.js"]
     }
   ];
@@ -70,15 +70,19 @@ const FeaturedProjects = () => {
                 {/* Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                   {/* Author */}
-                  <a
-                    href={project.authorLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-mono text-gray-500 hover:text-amber-500 transition-colors flex items-center"
-                  >
-                    <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
-                    @{project.authorName}
-                  </a>
+                  {project.authorName && project.authorLink ? (
+                    <a
+                      href={project.authorLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono text-gray-500 hover:text-amber-500 transition-colors flex items-center"
+                    >
+                      <span className="w-2 h-2 bg-amber-500 rounded-full mr-2"></span>
+                      @{project.authorName}
+                    </a>
+                  ) : (
+                    <div></div>
+                  )}
 
                   {/* Repo Link */}
                   <a

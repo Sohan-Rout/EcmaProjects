@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import SubmitProjectPopup from './SubmitProjectPopup';
+import Link from 'next/link';
 
 const LoadingOverlay = () => (
   <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
@@ -50,13 +50,14 @@ const Navbar = () => {
     }
   };
 
-  const openPopup = () => {
-    setIsOpen(true);
-  };
-
-  const closePopup = () => {
-    setIsOpen(false);
-  };
+  const navItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'About', id: 'about' },
+    { name: 'Resources', id: 'resources' },
+    { name: 'Blog', id: 'blog' },
+    { name: 'Contact', id: 'contact' },
+  ];
 
   return (
     <>
@@ -67,7 +68,6 @@ const Navbar = () => {
             {/* Logo - Left aligned */}
             <div className="flex-shrink-0 flex items-center space-x-3">
               <button onClick={() => scrollToSection('home')} className="group flex items-center space-x-3">
-                {/* Removed favicon image */}
                 <h1 className="text-xl font-mono font-bold tracking-tight text-white">
                   <span className="text-amber-500 group-hover:text-amber-400 transition-colors">E</span>
                   <span className="group-hover:text-gray-300 transition-colors">cma</span>
@@ -80,16 +80,16 @@ const Navbar = () => {
             {/* Desktop Navigation - Centered */}
             <div className="hidden md:flex md:items-center md:justify-center flex-1 mx-8">
               <div className="flex space-x-1">
-                {[
-                  { name: 'Home', id: 'home' },
-                  { name: 'Projects', id: 'projects' },
-                  { name: 'About', id: 'about' },
-                  { name: 'Resources', id: 'resources' },
-                  { name: 'Contact', id: 'contact' },
-                ].map((item) => (
-                  <button 
+                {navItems.map((item) => (
+                  <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => {
+                      if(item.id === 'blog') {
+                        window.location.href = '/blog';
+                      } else {
+                        scrollToSection(item.id);
+                      }
+                    }}
                     className="relative px-4 py-2 group"
                   >
                     <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
@@ -103,13 +103,15 @@ const Navbar = () => {
 
             {/* CTA Button - Right aligned */}
             <div className="hidden md:block">
-              <button onClick={openPopup} className="ml-4 relative overflow-hidden bg-amber-500 text-black px-4 py-2 rounded-md font-medium hover:bg-amber-400 transition-all duration-300 group flex items-center">
-                <span className="relative z-10">Submit Project</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
-                </svg>
-                <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </button>
+              <Link href="/submit-project" legacyBehavior passHref>
+                <a className="ml-4 relative overflow-hidden bg-amber-500 text-black px-4 py-2 rounded-md font-medium hover:bg-amber-400 transition-all duration-300 group flex items-center">
+                  <span className="relative z-10">Submit Project</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+                  </svg>
+                  <span className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                </a>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -137,16 +139,16 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-sm border-t border-gray-800">
-            {[
-              { name: 'Home', id: 'home' },
-              { name: 'Projects', id: 'projects' },
-              { name: 'About', id: 'about' },
-              { name: 'Resources', id: 'resources' },
-              { name: 'Contact', id: 'contact' },
-            ].map((item) => (
+            {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  if(item.id === 'blog') {
+                    window.location.href = '/blog';
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
                 className="block w-full px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md"
               >
                 {item.name}
@@ -155,7 +157,6 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <SubmitProjectPopup isOpen={isOpen} onClose={closePopup} />
     </>
   );
 };
