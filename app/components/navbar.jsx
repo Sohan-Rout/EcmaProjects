@@ -50,6 +50,15 @@ const Navbar = () => {
     }
   };
 
+  const navItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'About', id: 'about' },
+    { name: 'Resources', id: 'resources' },
+    { name: 'Blog', id: 'blog' },
+    { name: 'Contact', id: 'contact' },
+  ];
+
   return (
     <>
       {loading && <LoadingOverlay />}
@@ -71,16 +80,16 @@ const Navbar = () => {
             {/* Desktop Navigation - Centered */}
             <div className="hidden md:flex md:items-center md:justify-center flex-1 mx-8">
               <div className="flex space-x-1">
-                {[
-                  { name: 'Home', id: 'home' },
-                  { name: 'Projects', id: 'projects' },
-                  { name: 'About', id: 'about' },
-                  { name: 'Resources', id: 'resources' },
-                  { name: 'Contact', id: 'contact' },
-                ].map((item) => (
-                  <button 
+                {navItems.map((item) => (
+                  <button
                     key={item.name}
-                    onClick={() => scrollToSection(item.id)}
+                    onClick={() => {
+                      if(item.id === 'blog') {
+                        window.location.href = '/blog';
+                      } else {
+                        scrollToSection(item.id);
+                      }
+                    }}
                     className="relative px-4 py-2 group"
                   >
                     <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
@@ -130,16 +139,16 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-sm border-t border-gray-800">
-            {[ 
-              { name: 'Home', id: 'home' },
-              { name: 'Projects', id: 'projects' },
-              { name: 'About', id: 'about' },
-              { name: 'Resources', id: 'resources' },
-              { name: 'Contact', id: 'contact' },
-            ].map((item) => (
+            {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  if(item.id === 'blog') {
+                    window.location.href = '/blog';
+                  } else {
+                    scrollToSection(item.id);
+                  }
+                }}
                 className="block w-full px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md"
               >
                 {item.name}
